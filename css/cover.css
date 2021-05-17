@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+
+#global_nav {
+	/** height is updated through JS */
+	width: 100vw;
+	background-color: #ff3506;
+	position: absolute;
+	z-index: 9999;
+}
+#logo_menu_wrapper {
+	/* positioning & margin are adjusted through JS */
+	padding: 5vw 0 5vw 0;
+	
+	/**
+	 * Hard code to fix the issue that some browsers show nav contents before they are moved off screen
+	 * Fix: CSS set to hidden first; JS makes is visible upon opening
+	 */
+	visibility: hidden;
+}
+#global_nav #logo_menu_wrapper #yintegral_logo {
+	margin: 0 auto 1.5vw auto; 
+	width: 100vw;
+	text-align: center;
+	margin-left: -1vw;
+}
+#global_nav #logo_menu_wrapper #yintegral_logo img {
+	width: 23vw;
+	min-width: 350px;
+}
+#global_nav #logo_menu_wrapper #global_menu {
+	color: white;
+	letter-spacing: 0.1em;
+	margin-left: 2vw;
+}
+#global_nav #logo_menu_wrapper #global_menu a {
+	color: white;
+}
+#global_nav #logo_menu_wrapper #global_menu a:hover {
+	color: #ffdfd8;
+}
+#global_nav #logo_menu_wrapper #global_menu #global_left {
+	text-align: right;
+	text-transform: uppercase;
+	float: left;
+	width: 49vw;
+}
+#global_nav #logo_menu_wrapper #global_menu #global_right {
+	text-align: left;
+	/** margin will be set through JS */
+}
+#global_nav #logo_menu_wrapper #global_menu .global_menu_title {
+	font-weight: bold;
+	color: #ff896d;
+	text-transform: uppercase;
+	font-size: 0.7em;
+}
+#global_nav #logo_menu_wrapper #global_menu .global_menu_item {
+	font-size: 0.8em;
+	padding: 0 0 1.5em 0;
+}
+#global_nav #logo_menu_wrapper #global_menu .global_menu_item:last-child {
+	/* this enusres there is no margin or padding around #logo_menu_wrapper, leaving all layout logic to JS */
+	padding: 0;
+}
+
+
+/* layout structure */
+#container_cover, #container_cover #push_down {
+	width: 100%;
+	height: 80vw;
+	min-height: 800px;
+}
+#container_cover {
+	background-image: url("../img/cover/creative-splash-2560.jpg");
+	background-repeat: no-repeat;
+	background-size: 130% 117%;
+	background-position: -23vw bottom;
+}
+#container_cover #push_down {
+	pointer-events: none;
+	z-index: -100;	
+	visibility: hidden;
+}
+#container_cover .cover_footer {
+	width: 100%;
+	text-align: right;
+	letter-spacing: 0.3em;
+	font-size: 0.6em;
+	text-transform: uppercase;
+	margin: -2em 0 0 -1em;
+	padding: 0 0 0 0;
+}
+
+@media only screen and (max-width: 14000px) {
+	#container_cover, #container_cover #push_down {
+		padding-top: 10vw;
+		background-size: 130% 100%;
+	}
+}
+@media only screen and (max-width: 1000px) {
+	#logo_menu_wrapper {
+		/* positioning & margin are adjusted through JS */
+		padding: 8vw 0 8vw 0;
+	}
+	#container_cover, #container_cover #push_down {
+		height: 110vw;
+		min-height: 800px;
+	}
+	#container_cover {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		
+		background-position: -45vw bottom;
+	}
+	#global_nav #logo_menu_wrapper #global_menu .global_menu_title {
+		font-size: 0.9em;
+	}
+	#global_nav #logo_menu_wrapper #global_menu .global_menu_item {
+		font-size: 1em;
+		padding: 0 0 1.5em 0;
+	}
+}

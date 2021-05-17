@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	text-rendering: optimizeLegibility;
+	margin: 0px;
+	color: #555;
+	background-color: #fff;
+}
+a {
+	text-decoration: none;
+	color: #555;
+}
+.systemMessage_title {
+	font-size: 1em;
+	width: 100%;
+	text-align: center;
+	margin: 50vh 0 0 0;
+}
